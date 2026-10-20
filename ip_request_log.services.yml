@@ -1,0 +1,12 @@
+services:
+  logger.channel.ip_request_log:
+    parent: logger.channel_base
+    arguments: ['ip_request_log']
+
+  ip_request_log.middleware:
+    class: Drupal\ip_request_log\StackMiddleware\IpRequestLogMiddleware
+    arguments: ['@logger.channel.ip_request_log', '@settings']
+    tags:
+      # Higher than page_cache (200) so cached pages are logged too.
+      - { name: http_middleware, priority: 300 }
+

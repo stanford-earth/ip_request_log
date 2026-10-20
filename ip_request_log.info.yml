@@ -1,0 +1,6 @@
+name: 'IP Request Log'
+type: module
+description: 'Logs all requests from configured IP addresses.'
+core_version_requirement: ^10 || ^11
+package: Custom
+
