@@ -31,7 +31,7 @@ class IpRequestLogMiddleware implements HttpKernelInterface {
         '@ref' => $request->headers->get('Referer', '-'),
       ]);
     }
-
+    $xyz = 1;
     return $response;
   }
 
